@@ -33,9 +33,9 @@ def countries_with_no_deaths_count(date: datetime.date) -> int:
     where infections were found, but nobody died on a given date. (DO NOT GROUP BY)
     Ex.
     >>> countries_with_no_deaths_count(datetime.date(2020, 3, 15))
-    44
+    171
     >>> countries_with_no_deaths_count(datetime.date(2020, 2, 18))
-    33
+    46
     :param date: Date object of the date to get the results for
     :return: Number of countries with no deaths but with active cases on a given date as an integer
     """
@@ -56,13 +56,11 @@ def more_cured_than_deaths_indices(date: datetime.date) -> List[int]:
     128, 154, 155, 156, 158, 159, 160, 161, 162, 163, 164, 165, 166, 167,
     168, 169, 171, 172, 173, 174, 175, 176, 177, 178, 179, 180, 181, 182,
     183, 184, 185, 187, 188, 189, 190, 191, 192, 193, 194, 202, 208]
-
     >>> more_cured_than_deaths_indices(datetime.date(2020, 2, 18))
     [0, 1, 2, 3, 4, 6, 7, 9, 10, 11, 12, 13, 15, 18, 19, 20, 92, 154, 156,
     157, 158, 159, 160, 161, 162, 163, 164, 166, 167, 168, 169, 171, 172,
     173, 174, 175, 176, 177, 178, 179, 180, 181, 182, 183, 184, 185, 187,
     188, 189, 190, 191, 192, 193, 194, 202, 347, 348, 403]
-
     :param date: Date object of the date to get the results for
     :return: A List of integers containing indices of countries which had more cured cases than deaths on a given date
     """
